@@ -1,0 +1,20 @@
+# Secrets
+.env
+*.env
+secrets/
+credentials/
+private/
+
+# Backups
+backups/*
+!backups/.gitkeep
+
+# Runtime / generated data
+data/
+logs/
+*.log
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
