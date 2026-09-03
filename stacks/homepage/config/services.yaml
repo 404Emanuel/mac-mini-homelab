@@ -1,0 +1,22 @@
+- Management:
+    - Arcane:
+        icon: arcane.png
+        href: http://192.168.1.118:3552
+        description: Docker Management
+        server: local
+        container: arcane
+
+- Monitoring:
+    - Grafana:
+        icon: grafana.png
+        href: http://192.168.1.118:3000
+        description: Metrics & Dashboards
+        server: local
+        container: grafana
+
+    - Prometheus:
+        icon: prometheus.png
+        href: http://192.168.1.118:9090
+        description: Metrics Database
+        server: local
+        container: prometheus
