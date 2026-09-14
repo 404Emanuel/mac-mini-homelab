@@ -1,4 +1,4 @@
-- Overview:
+- Status:
 
     - Server Health:
         id: server-health-card
@@ -98,7 +98,7 @@
                 type: bytes
 
 
-- System:
+- Core:
 
     - Mac Mini:
         id: macmini-card
@@ -118,7 +118,7 @@
         statusStyle: dot
 
 
-- Control Center:
+- Operations:
 
     - Pelican:
         id: pelican-card
@@ -147,7 +147,7 @@
         showStats: true
 
 
-- Infrastructure:
+- Monitoring:
 
     - Prometheus:
         id: prometheus-card

@@ -17,23 +17,23 @@ useEqualHeights: true
 target: _blank
 
 layout:
-  Overview:
-    icon: mdi-speedometer
-    style: row
-    columns: 4
-
-  System:
-    icon: mdi-server
-    style: row
-    columns: 2
-
-  Control Center:
-    icon: mdi-view-dashboard
+  Status:
+    icon: mdi-heart-pulse
     style: row
     columns: 3
 
-  Infrastructure:
-    icon: mdi-cogs
+  Core:
+    icon: mdi-server-network
+    style: row
+    columns: 2
+
+  Operations:
+    icon: mdi-toolbox
+    style: row
+    columns: 3
+
+  Monitoring:
+    icon: mdi-chart-box
     style: row
     columns: 4
 
