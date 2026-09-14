@@ -1,0 +1,25 @@
+title: Mac Mini Homelab
+description: Debian 13 · 192.168.1.118
+
+theme: dark
+color: neutral
+headerStyle: clean
+statusStyle: dot
+
+hideVersion: true
+useEqualHeights: true
+disableCollapse: true
+target: _self
+
+layout:
+  Management:
+    style: row
+    columns: 2
+
+  Game Servers:
+    style: row
+    columns: 1
+
+  Monitoring:
+    style: row
+    columns: 1

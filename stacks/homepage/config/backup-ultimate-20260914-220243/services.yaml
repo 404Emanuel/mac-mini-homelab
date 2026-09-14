@@ -1,0 +1,38 @@
+- Management:
+    - Pelican:
+        id: pelican-card
+        icon: mdi-gamepad-variant
+        href: http://192.168.1.118
+        description: Game Server Management
+        siteMonitor: http://192.168.1.118
+
+    - Arcane:
+        id: arcane-card
+        icon: arcane.png
+        href: http://192.168.1.118:3552
+        description: Docker Management
+        server: local
+        container: arcane
+
+- Game Servers:
+    - Minecraft Paper:
+        id: minecraft-card
+        icon: mdi-minecraft
+        href: http://192.168.1.118/server/26ee3ce6/console
+        description: Paper 26.2 · Survival
+        widget:
+          type: minecraft
+          url: udp://192.168.1.118:25565
+          fields:
+            - status
+            - players
+            - version
+
+- Monitoring:
+    - Grafana:
+        id: grafana-card
+        icon: grafana.png
+        href: http://192.168.1.118:3000
+        description: Metrics & Dashboards
+        server: local
+        container: grafana

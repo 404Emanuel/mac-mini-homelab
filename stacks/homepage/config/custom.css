@@ -1,0 +1,381 @@
+
+/* ==========================================================
+   MAC MINI HOMELAB
+   Dark / glass / infrastructure dashboard
+   ========================================================== */
+
+
+/* ---------- BACKGROUND ---------- */
+
+#page_container {
+  min-height: 100vh !important;
+
+  background-color: #07090d !important;
+
+  background-image:
+    radial-gradient(
+      circle at 12% -8%,
+      rgba(99, 102, 241, 0.18),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 92% 2%,
+      rgba(14, 165, 233, 0.10),
+      transparent 32rem
+    ),
+    linear-gradient(
+      rgba(148, 163, 184, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.025) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size:
+    auto,
+    auto,
+    48px 48px,
+    48px 48px !important;
+
+  background-attachment: fixed !important;
+}
+
+
+/* ---------- TYPOGRAPHY ---------- */
+
+body {
+  letter-spacing: -0.01em;
+}
+
+.services-group {
+  margin-top: 2rem !important;
+  margin-bottom: 2.2rem !important;
+}
+
+.services-group h2 {
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  color: rgba(203, 213, 225, 0.78) !important;
+}
+
+
+/* ---------- BASE CARDS ---------- */
+
+.service {
+  position: relative !important;
+  overflow: hidden !important;
+
+  border-radius: 18px !important;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.12) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 28, 38, 0.88),
+      rgba(11, 14, 20, 0.94)
+    ) !important;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+
+  backdrop-filter:
+    blur(16px) saturate(115%) !important;
+
+  -webkit-backdrop-filter:
+    blur(16px) saturate(115%) !important;
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+
+.service:hover {
+  transform: translateY(-3px) !important;
+
+  border-color:
+    rgba(148, 163, 184, 0.28) !important;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* ---------- ACCENT LINE ---------- */
+
+.service::before {
+  content: "";
+  position: absolute;
+
+  left: 16px;
+  right: 16px;
+  top: 0;
+
+  height: 2px;
+
+  opacity: 0.75;
+
+  border-radius:
+    0 0 999px 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(148, 163, 184, 0.7),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   SYSTEM
+   ========================================================== */
+
+#macmini-card {
+  border-color:
+    rgba(56, 189, 248, 0.18) !important;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(56, 189, 248, 0.10),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(20, 27, 38, 0.94),
+      rgba(9, 13, 19, 0.96)
+    ) !important;
+}
+
+#macmini-card::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #38bdf8,
+      transparent
+    );
+}
+
+
+#network-card {
+  border-color:
+    rgba(34, 211, 238, 0.14) !important;
+}
+
+#network-card::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #22d3ee,
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   CONTROL CENTER
+   ========================================================== */
+
+#pelican-card {
+  border-color:
+    rgba(139, 92, 246, 0.18) !important;
+}
+
+#pelican-card::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #8b5cf6,
+      transparent
+    );
+}
+
+
+#arcane-card {
+  border-color:
+    rgba(168, 85, 247, 0.20) !important;
+}
+
+#arcane-card::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #a855f7,
+      transparent
+    );
+}
+
+
+#grafana-card {
+  border-color:
+    rgba(249, 115, 22, 0.18) !important;
+}
+
+#grafana-card::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #f97316,
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   MINECRAFT HERO CARD
+   ========================================================== */
+
+#minecraft-card {
+  min-height: 150px !important;
+
+  border-color:
+    rgba(74, 222, 128, 0.22) !important;
+
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(34, 197, 94, 0.12),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(132, 204, 22, 0.07),
+      transparent 36%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(12, 30, 23, 0.92),
+      rgba(7, 15, 13, 0.97)
+    ) !important;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(134, 239, 172, 0.04) !important;
+}
+
+
+#minecraft-card::before {
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #22c55e,
+      #84cc16,
+      transparent
+    );
+}
+
+
+#minecraft-card:hover {
+  border-color:
+    rgba(74, 222, 128, 0.45) !important;
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.42),
+    0 0 35px rgba(34, 197, 94, 0.055) !important;
+}
+
+
+/* ---------- ICONS ---------- */
+
+.service img {
+  filter:
+    drop-shadow(
+      0 5px 12px rgba(0, 0, 0, 0.28)
+    );
+}
+
+
+/* ==========================================================
+   INFRASTRUCTURE
+   ========================================================== */
+
+#prometheus-card,
+#cadvisor-card,
+#nodeexporter-card,
+#homepage-card {
+  opacity: 0.92;
+}
+
+
+/* ---------- STATUS DOT GLOW ---------- */
+
+.bg-green-500,
+.bg-emerald-500 {
+  box-shadow:
+    0 0 10px rgba(16, 185, 129, 0.7);
+}
+
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090d;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    rgba(100, 116, 139, 0.35);
+
+  border-radius: 999px;
+
+  border:
+    3px solid #07090d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(148, 163, 184, 0.55);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  opacity: 0.35 !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+  #page_container {
+    background-size:
+      auto,
+      auto,
+      32px 32px,
+      32px 32px !important;
+  }
+
+  .service {
+    border-radius: 14px !important;
+  }
+
+  #minecraft-card {
+    min-height: 130px !important;
+  }
+}
+

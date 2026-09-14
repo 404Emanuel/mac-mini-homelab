@@ -1,12 +1,11 @@
----
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/info-widgets/
+- greeting:
+    text_size: 3xl
+    text: MAC MINI / HOMELAB
 
-- resources:
-    cpu: true
-    memory: true
-    disk: /
-
-- search:
-    provider: duckduckgo
-    target: _blank
+- datetime:
+    text_size: xl
+    locale: de-CH
+    format:
+      dateStyle: medium
+      timeStyle: short
+      hourCycle: h23

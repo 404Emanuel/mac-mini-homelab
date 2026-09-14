@@ -1,7 +1,38 @@
----
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/settings/
+title: Mac Mini Homelab
+description: Debian 13 · Self-Hosted Infrastructure
 
-providers:
-  openweathermap: openweathermapapikey
-  weatherapi: weatherapiapikey
+theme: dark
+color: slate
+
+fullWidth: true
+headerStyle: clean
+statusStyle: dot
+cardBlur: sm
+
+hideVersion: true
+disableIndexing: true
+disableCollapse: false
+useEqualHeights: true
+
+target: _blank
+
+layout:
+  System:
+    icon: mdi-server
+    style: row
+    columns: 2
+
+  Control Center:
+    icon: mdi-view-dashboard
+    style: row
+    columns: 3
+
+  Game Server:
+    icon: mdi-controller
+    style: row
+    columns: 1
+
+  Infrastructure:
+    icon: mdi-cog-outline
+    style: row
+    columns: 4
