@@ -1,5 +1,5 @@
 title: Mac Mini Homelab
-description: Debian 13 · Self-Hosted Infrastructure
+description: Debian 13 · Docker · Monitoring · Services
 
 theme: dark
 color: slate
@@ -17,6 +17,11 @@ useEqualHeights: true
 target: _blank
 
 layout:
+  Overview:
+    icon: mdi-speedometer
+    style: row
+    columns: 4
+
   System:
     icon: mdi-server
     style: row
@@ -27,12 +32,12 @@ layout:
     style: row
     columns: 3
 
+  Infrastructure:
+    icon: mdi-cogs
+    style: row
+    columns: 4
+
   Game Server:
     icon: mdi-controller
     style: row
     columns: 1
-
-  Infrastructure:
-    icon: mdi-cog-outline
-    style: row
-    columns: 4

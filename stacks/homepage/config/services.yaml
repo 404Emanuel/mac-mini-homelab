@@ -1,10 +1,10 @@
-- System:
+- Overview:
 
-    - Mac Mini:
-        id: macmini-card
-        icon: mdi-server
+    - Server Health:
+        id: server-health-card
+        icon: mdi-speedometer
         href: http://192.168.1.118:3000
-        description: Debian 13 · i7-8700B · 6C/12T · 16 GB
+        description: CPU · RAM · SSD · Temp
         widget:
           type: prometheusmetric
           url: http://192.168.1.118:9090
@@ -42,7 +42,6 @@
                 options:
                   maximumFractionDigits: 1
 
-
     - Network & Uptime:
         id: network-card
         icon: mdi-lan
@@ -67,6 +66,56 @@
               query: sum(rate(node_network_transmit_bytes_total{job="node-exporter",device="enp4s0"}[5m]))
               format:
                 type: byterate
+
+    - Host Load:
+        id: host-load-card
+        icon: mdi-memory
+        href: http://192.168.1.118:9090
+        description: Load · Disk · Rootfs
+        widget:
+          type: prometheusmetric
+          url: http://192.168.1.118:9090
+          refreshInterval: 5000
+          metrics:
+            - label: LOAD 1m
+              query: node_load1{job="node-exporter"}
+              format:
+                type: number
+                options:
+                  maximumFractionDigits: 2
+
+            - label: DISK
+              query: 100 * (1 - (node_filesystem_avail_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"}))
+              format:
+                type: number
+                suffix: "%"
+                options:
+                  maximumFractionDigits: 1
+
+            - label: ROOTFS
+              query: node_filesystem_size_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"}
+              format:
+                type: bytes
+
+
+- System:
+
+    - Mac Mini:
+        id: macmini-card
+        icon: mdi-server
+        href: http://192.168.1.118:3000
+        description: Debian 13 · i7-8700B · 6C/12T · 16 GB
+        server: local
+        container: homepage
+        showStats: true
+
+    - Host Status:
+        id: host-status-card
+        icon: mdi-shield-check
+        href: http://192.168.1.118:3000
+        description: Stable host environment
+        siteMonitor: http://192.168.1.118
+        statusStyle: dot
 
 
 - Control Center:
@@ -96,22 +145,6 @@
         server: local
         container: grafana
         showStats: true
-
-
-- Game Server:
-
-    - Minecraft Paper:
-        id: minecraft-card
-        icon: mdi-minecraft
-        href: http://192.168.1.118/server/26ee3ce6/console
-        description: Survival · Paper 26.2
-        widget:
-          type: minecraft
-          url: udp://192.168.1.118:25565
-          fields:
-            - status
-            - players
-            - version
 
 
 - Infrastructure:
@@ -157,3 +190,19 @@
         server: local
         container: homepage
         showStats: true
+
+
+- Game Server:
+
+    - Minecraft Paper:
+        id: minecraft-card
+        icon: mdi-minecraft
+        href: http://192.168.1.118/server/26ee3ce6/console
+        description: Survival · Paper 26.2
+        widget:
+          type: minecraft
+          url: udp://192.168.1.118:25565
+          fields:
+            - status
+            - players
+            - version

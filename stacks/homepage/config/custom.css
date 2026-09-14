@@ -1,373 +1,199 @@
-
 /* ==========================================================
    MAC MINI HOMELAB
-   Dark / glass / infrastructure dashboard
+   Premium dark dashboard styling
    ========================================================== */
-
-
-/* ---------- BACKGROUND ---------- */
 
 #page_container {
   min-height: 100vh !important;
-
-  background-color: #07090d !important;
-
+  background-color: #070b11 !important;
   background-image:
-    radial-gradient(
-      circle at 12% -8%,
-      rgba(99, 102, 241, 0.18),
-      transparent 34rem
-    ),
-    radial-gradient(
-      circle at 92% 2%,
-      rgba(14, 165, 233, 0.10),
-      transparent 32rem
-    ),
-    linear-gradient(
-      rgba(148, 163, 184, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.025) 1px,
-      transparent 1px
-    ) !important;
-
-  background-size:
-    auto,
-    auto,
-    48px 48px,
-    48px 48px !important;
-
+    radial-gradient(circle at 12% -10%, rgba(96, 165, 250, 0.18), transparent 28rem),
+    radial-gradient(circle at 90% 0%, rgba(45, 212, 191, 0.12), transparent 26rem),
+    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.08), transparent 26rem),
+    linear-gradient(rgba(148, 163, 184, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.02) 1px, transparent 1px) !important;
+  background-size: auto, auto, auto, 42px 42px, 42px 42px !important;
   background-attachment: fixed !important;
 }
 
-
-/* ---------- TYPOGRAPHY ---------- */
-
 body {
   letter-spacing: -0.01em;
+  color: #e2e8f0 !important;
 }
 
 .services-group {
-  margin-top: 2rem !important;
+  margin-top: 2.1rem !important;
   margin-bottom: 2.2rem !important;
 }
 
 .services-group h2 {
-  text-transform: uppercase !important;
-  letter-spacing: 0.12em !important;
-  font-size: 0.78rem !important;
+  font-size: 0.76rem !important;
   font-weight: 700 !important;
-  color: rgba(203, 213, 225, 0.78) !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: rgba(191, 219, 254, 0.7) !important;
 }
-
-
-/* ---------- BASE CARDS ---------- */
 
 .service {
   position: relative !important;
   overflow: hidden !important;
-
   border-radius: 18px !important;
-
-  border:
-    1px solid rgba(148, 163, 184, 0.12) !important;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(24, 28, 38, 0.88),
-      rgba(11, 14, 20, 0.94)
-    ) !important;
-
-  box-shadow:
-    0 14px 35px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
-
-  backdrop-filter:
-    blur(16px) saturate(115%) !important;
-
-  -webkit-backdrop-filter:
-    blur(16px) saturate(115%) !important;
-
-  transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(9, 13, 19, 0.96)) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(18px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
 }
-
 
 .service:hover {
   transform: translateY(-3px) !important;
-
-  border-color:
-    rgba(148, 163, 184, 0.28) !important;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(148, 163, 184, 0.25) !important;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
 }
-
-
-/* ---------- ACCENT LINE ---------- */
 
 .service::before {
   content: "";
   position: absolute;
-
-  left: 16px;
-  right: 16px;
+  left: 18px;
+  right: 18px;
   top: 0;
-
   height: 2px;
-
-  opacity: 0.75;
-
-  border-radius:
-    0 0 999px 999px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(148, 163, 184, 0.7),
-      transparent
-    );
+  opacity: 0.78;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.7), transparent);
 }
 
+.service .name {
+  color: #f8fafc !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
 
-/* ==========================================================
-   SYSTEM
-   ========================================================== */
+.service .description {
+  color: rgba(148, 163, 184, 0.86) !important;
+  font-size: 0.8rem !important;
+}
+
+.service .stats {
+  color: #e2e8f0 !important;
+}
+
+.service img {
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.28));
+}
+
+#page_container .service + .service {
+  margin-left: 0 !important;
+}
 
 #macmini-card {
-  border-color:
-    rgba(56, 189, 248, 0.18) !important;
-
-  background:
-    radial-gradient(
-      circle at 0% 0%,
-      rgba(56, 189, 248, 0.10),
-      transparent 45%
-    ),
-    linear-gradient(
-      145deg,
-      rgba(20, 27, 38, 0.94),
-      rgba(9, 13, 19, 0.96)
-    ) !important;
+  border-color: rgba(56, 189, 248, 0.18) !important;
+  background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.12), transparent 42%), linear-gradient(145deg, rgba(16, 28, 38, 0.96), rgba(8, 12, 18, 0.96)) !important;
 }
 
 #macmini-card::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #38bdf8,
-      transparent
-    );
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
 }
 
-
-#network-card {
-  border-color:
-    rgba(34, 211, 238, 0.14) !important;
+#network-card,
+#host-load-card,
+#host-status-card {
+  border-color: rgba(34, 211, 238, 0.16) !important;
 }
 
-#network-card::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #22d3ee,
-      transparent
-    );
+#network-card::before,
+#host-load-card::before,
+#host-status-card::before {
+  background: linear-gradient(90deg, transparent, #22d3ee, transparent);
 }
-
-
-/* ==========================================================
-   CONTROL CENTER
-   ========================================================== */
 
 #pelican-card {
-  border-color:
-    rgba(139, 92, 246, 0.18) !important;
+  border-color: rgba(139, 92, 246, 0.18) !important;
 }
 
 #pelican-card::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #8b5cf6,
-      transparent
-    );
+  background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
 }
 
-
 #arcane-card {
-  border-color:
-    rgba(168, 85, 247, 0.20) !important;
+  border-color: rgba(168, 85, 247, 0.2) !important;
 }
 
 #arcane-card::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #a855f7,
-      transparent
-    );
+  background: linear-gradient(90deg, transparent, #a855f7, transparent);
 }
 
-
 #grafana-card {
-  border-color:
-    rgba(249, 115, 22, 0.18) !important;
+  border-color: rgba(249, 115, 22, 0.2) !important;
 }
 
 #grafana-card::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #f97316,
-      transparent
-    );
+  background: linear-gradient(90deg, transparent, #f97316, transparent);
 }
 
+#server-health-card {
+  border-color: rgba(45, 212, 191, 0.2) !important;
+}
 
-/* ==========================================================
-   MINECRAFT HERO CARD
-   ========================================================== */
+#server-health-card::before {
+  background: linear-gradient(90deg, transparent, #2dd4bf, transparent);
+}
 
 #minecraft-card {
-  min-height: 150px !important;
-
-  border-color:
-    rgba(74, 222, 128, 0.22) !important;
-
-  background:
-    radial-gradient(
-      circle at 12% 50%,
-      rgba(34, 197, 94, 0.12),
-      transparent 36%
-    ),
-    radial-gradient(
-      circle at 88% 10%,
-      rgba(132, 204, 22, 0.07),
-      transparent 36%
-    ),
-    linear-gradient(
-      145deg,
-      rgba(12, 30, 23, 0.92),
-      rgba(7, 15, 13, 0.97)
-    ) !important;
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(134, 239, 172, 0.04) !important;
+  min-height: 152px !important;
+  border-color: rgba(74, 222, 128, 0.22) !important;
+  background: radial-gradient(circle at 15% 40%, rgba(34, 197, 94, 0.14), transparent 34%), radial-gradient(circle at 82% 12%, rgba(74, 222, 128, 0.1), transparent 30%), linear-gradient(145deg, rgba(10, 28, 22, 0.94), rgba(7, 16, 12, 0.96)) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(134, 239, 172, 0.04) !important;
 }
-
 
 #minecraft-card::before {
   height: 3px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #22c55e,
-      #84cc16,
-      transparent
-    );
+  background: linear-gradient(90deg, transparent, #22c55e, #84cc16, transparent);
 }
-
 
 #minecraft-card:hover {
-  border-color:
-    rgba(74, 222, 128, 0.45) !important;
-
-  box-shadow:
-    0 22px 55px rgba(0, 0, 0, 0.42),
-    0 0 35px rgba(34, 197, 94, 0.055) !important;
+  border-color: rgba(74, 222, 128, 0.45) !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.42), 0 0 35px rgba(34, 197, 94, 0.06) !important;
 }
-
-
-/* ---------- ICONS ---------- */
-
-.service img {
-  filter:
-    drop-shadow(
-      0 5px 12px rgba(0, 0, 0, 0.28)
-    );
-}
-
-
-/* ==========================================================
-   INFRASTRUCTURE
-   ========================================================== */
 
 #prometheus-card,
 #cadvisor-card,
 #nodeexporter-card,
 #homepage-card {
-  opacity: 0.92;
+  opacity: 0.96;
 }
-
-
-/* ---------- STATUS DOT GLOW ---------- */
 
 .bg-green-500,
 .bg-emerald-500 {
-  box-shadow:
-    0 0 10px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
 }
-
-
-/* ---------- SCROLLBAR ---------- */
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07090d;
+  background: #070b11;
 }
 
 ::-webkit-scrollbar-thumb {
-  background:
-    rgba(100, 116, 139, 0.35);
-
+  background: rgba(100, 116, 139, 0.38);
   border-radius: 999px;
-
-  border:
-    3px solid #07090d;
+  border: 3px solid #070b11;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background:
-    rgba(148, 163, 184, 0.55);
+  background: rgba(148, 163, 184, 0.56);
 }
-
-
-/* ---------- FOOTER ---------- */
 
 footer {
   opacity: 0.35 !important;
 }
 
-
-/* ---------- MOBILE ---------- */
-
 @media (max-width: 768px) {
-
   #page_container {
-    background-size:
-      auto,
-      auto,
-      32px 32px,
-      32px 32px !important;
+    background-size: auto, auto, auto, 24px 24px, 24px 24px !important;
   }
 
   .service {
