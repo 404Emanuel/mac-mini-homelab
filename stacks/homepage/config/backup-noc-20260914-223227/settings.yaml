@@ -11,7 +11,7 @@ cardBlur: sm
 
 hideVersion: true
 disableIndexing: true
-disableCollapse: true
+disableCollapse: false
 useEqualHeights: true
 
 target: _blank

@@ -11,7 +11,7 @@
           refreshInterval: 5000
           metrics:
             - label: CPU
-              query: 100 - (avg(rate(node_cpu_seconds_total{job="node-exporter",mode="idle"}[2m])) * 100)
+              query: 100 - (avg(rate(node_cpu_seconds_total{job="node-exporter",mode="idle"}[5m])) * 100)
               format:
                 type: number
                 suffix: "%"
@@ -34,19 +34,19 @@
                 options:
                   maximumFractionDigits: 1
 
-            - label: CPU TEMP
-              query: max(node_hwmon_temp_celsius{job="node-exporter",chip="platform_coretemp_0"})
+            - label: TEMP
+              query: max(node_hwmon_temp_celsius{job="node-exporter"} < 110)
               format:
                 type: number
                 suffix: " °C"
                 options:
-                  maximumFractionDigits: 0
+                  maximumFractionDigits: 1
 
     - Network & Uptime:
         id: network-card
         icon: mdi-lan
-        href: http://192.168.1.118:9090/graph
-        description: Ethernet · eth0
+        href: http://192.168.1.118:3000
+        description: Ethernet · enp4s0
         widget:
           type: prometheusmetric
           url: http://192.168.1.118:9090
@@ -58,20 +58,20 @@
                 type: duration
 
             - label: RX
-              query: rate(node_network_receive_bytes_total{job="node-exporter",device="eth0"}[2m])
+              query: sum(rate(node_network_receive_bytes_total{job="node-exporter",device="enp4s0"}[5m]))
               format:
                 type: byterate
 
             - label: TX
-              query: rate(node_network_transmit_bytes_total{job="node-exporter",device="eth0"}[2m])
+              query: sum(rate(node_network_transmit_bytes_total{job="node-exporter",device="enp4s0"}[5m]))
               format:
                 type: byterate
 
     - Host Load:
         id: host-load-card
         icon: mdi-memory
-        href: http://192.168.1.118:9090/graph
-        description: Load · NVMe · Free Space
+        href: http://192.168.1.118:9090
+        description: Load · Disk · Rootfs
         widget:
           type: prometheusmetric
           url: http://192.168.1.118:9090
@@ -84,16 +84,16 @@
                 options:
                   maximumFractionDigits: 2
 
-            - label: NVME TEMP
-              query: max(node_hwmon_temp_celsius{job="node-exporter",chip="nvme_nvme0"})
+            - label: DISK
+              query: 100 * (1 - (node_filesystem_avail_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"}))
               format:
                 type: number
-                suffix: " °C"
+                suffix: "%"
                 options:
-                  maximumFractionDigits: 0
+                  maximumFractionDigits: 1
 
-            - label: FREE
-              query: node_filesystem_avail_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"}
+            - label: ROOTFS
+              query: node_filesystem_size_bytes{job="node-exporter",mountpoint="/",fstype!~"tmpfs|overlay"}
               format:
                 type: bytes
 
@@ -105,60 +105,17 @@
         icon: mdi-server
         href: http://192.168.1.118:3000
         description: Debian 13 · i7-8700B · 6C/12T · 16 GB
-        siteMonitor: http://192.168.1.118:3001
-        widget:
-          type: prometheusmetric
-          url: http://192.168.1.118:9090
-          refreshInterval: 10000
-          metrics:
-            - label: PROCESSES
-              query: node_procs_running{job="node-exporter"}
-              format:
-                type: number
-                options:
-                  maximumFractionDigits: 0
+        server: local
+        container: homepage
+        showStats: true
 
-            - label: RAM FREE
-              query: node_memory_MemAvailable_bytes{job="node-exporter"}
-              format:
-                type: bytes
-
-            - label: THREADS
-              query: count(node_cpu_seconds_total{job="node-exporter",mode="idle"})
-              format:
-                type: number
-                options:
-                  maximumFractionDigits: 0
-
-    - Containers:
+    - Host Status:
         id: host-status-card
-        icon: mdi-docker
-        href: http://192.168.1.118:3552
-        description: Docker Runtime · Live
-        widget:
-          type: prometheusmetric
-          url: http://192.168.1.118:9090
-          refreshInterval: 10000
-          metrics:
-            - label: RUNNING
-              query: count(container_last_seen{job="cadvisor",name=~".+"})
-              format:
-                type: number
-                options:
-                  maximumFractionDigits: 0
-
-            - label: CTR CPU
-              query: sum(rate(container_cpu_usage_seconds_total{job="cadvisor",name=~".+"}[2m])) * 100 / count(node_cpu_seconds_total{job="node-exporter",mode="idle"})
-              format:
-                type: number
-                suffix: "%"
-                options:
-                  maximumFractionDigits: 1
-
-            - label: CTR RAM
-              query: sum(container_memory_working_set_bytes{job="cadvisor",name=~".+"})
-              format:
-                type: bytes
+        icon: mdi-shield-check
+        href: http://192.168.1.118:3000
+        description: Stable host environment
+        siteMonitor: http://192.168.1.118
+        statusStyle: dot
 
 
 - Operations:
@@ -241,7 +198,7 @@
         id: minecraft-card
         icon: mdi-minecraft
         href: http://192.168.1.118/server/26ee3ce6/console
-        description: Survival · Paper 26.2 · Pelican Wings
+        description: Survival · Paper 26.2
         widget:
           type: minecraft
           url: udp://192.168.1.118:25565

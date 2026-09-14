@@ -1,0 +1,11 @@
+- greeting:
+    text_size: 3xl
+    text: MAC MINI / HOMELAB
+
+- datetime:
+    text_size: xl
+    locale: de-CH
+    format:
+      dateStyle: medium
+      timeStyle: short
+      hourCycle: h23

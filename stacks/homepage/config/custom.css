@@ -1,32 +1,22 @@
 /* ==========================================================
-   MAC MINI HOMELAB
-   Premium command-center UI
+   MAC MINI HOMELAB — NOC dark cockpit
    ========================================================== */
 
 :root {
   --bg-0: #070b11;
-  --bg-1: #0e1723;
-  --panel: rgba(15, 23, 42, 0.9);
-  --panel-2: rgba(17, 24, 39, 0.94);
-  --border: rgba(148, 163, 184, 0.16);
-  --border-strong: rgba(148, 163, 184, 0.25);
+  --border: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.26);
   --text: #e2e8f0;
   --muted: rgba(148, 163, 184, 0.8);
-  --cyan: #38bdf8;
-  --teal: #2dd4bf;
-  --violet: #8b5cf6;
-  --amber: #f59e0b;
-  --green: #22c55e;
-  --red: #f87171;
 }
 
 #page_container {
   min-height: 100vh !important;
   background-color: var(--bg-0) !important;
   background-image:
-    radial-gradient(circle at 12% -10%, rgba(56, 189, 248, 0.17), transparent 28rem),
-    radial-gradient(circle at 92% 4%, rgba(45, 212, 191, 0.12), transparent 24rem),
-    radial-gradient(circle at 50% 110%, rgba(139, 92, 246, 0.10), transparent 28rem),
+    radial-gradient(circle at 12% -10%, rgba(56, 189, 248, 0.15), transparent 26rem),
+    radial-gradient(circle at 92% 4%, rgba(45, 212, 191, 0.10), transparent 22rem),
+    radial-gradient(circle at 50% 110%, rgba(139, 92, 246, 0.08), transparent 26rem),
     linear-gradient(rgba(148, 163, 184, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.02) 1px, transparent 1px) !important;
   background-size: auto, auto, auto, 42px 42px, 42px 42px !important;
@@ -38,184 +28,133 @@ body {
   color: var(--text) !important;
 }
 
+/* ---------- group headers ---------- */
+
 .services-group {
-  margin-top: 2.4rem !important;
-  margin-bottom: 2.25rem !important;
+  margin-top: 1.6rem !important;
+  margin-bottom: 1.2rem !important;
 }
 
 .services-group h2 {
-  font-size: 0.74rem !important;
+  font-size: 0.72rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.17em !important;
   text-transform: uppercase !important;
-  color: rgba(191, 219, 254, 0.75) !important;
-  margin-bottom: 0.8rem !important;
+  color: rgba(191, 219, 254, 0.72) !important;
+  margin-bottom: 0.65rem !important;
 }
+
+/* ---------- base card ---------- */
 
 .service {
   position: relative !important;
   overflow: hidden !important;
-  border-radius: 18px !important;
+  border-radius: 16px !important;
   border: 1px solid var(--border) !important;
   background: linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(10, 14, 20, 0.96)) !important;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-  backdrop-filter: blur(18px) saturate(125%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(16px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease !important;
 }
 
 .service:hover {
   transform: translateY(-2px) !important;
   border-color: var(--border-strong) !important;
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
 }
 
 .service::before {
   content: "";
   position: absolute;
-  left: 18px;
-  right: 18px;
+  left: 16px;
+  right: 16px;
   top: 0;
   height: 2px;
   opacity: 0.8;
   border-radius: 0 0 999px 999px;
-  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.7), transparent);
 }
 
 .service .name {
   color: #f8fafc !important;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
-  line-height: 1.25 !important;
 }
 
 .service .description {
   color: var(--muted) !important;
-  font-size: 0.78rem !important;
-  line-height: 1.35 !important;
-}
-
-.service .stats {
-  color: var(--text) !important;
-  margin-top: 0.8rem !important;
-}
-
-.service .stats > div {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 0.38rem 0.45rem 0.25rem !important;
-  border-top: 1px solid rgba(148, 163, 184, 0.08) !important;
-  min-height: 1.7rem !important;
-}
-
-.service .stats > div:first-child {
-  border-top: 0 !important;
-}
-
-.service .stats .label {
-  color: rgba(148, 163, 184, 0.82) !important;
-  font-size: 0.67rem !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-}
-
-.service .stats .value {
-  color: #f8fafc !important;
-  font-size: 0.8rem !important;
-  font-weight: 700 !important;
+  font-size: 0.76rem !important;
 }
 
 .service img {
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
 }
 
-#server-health-card,
-#network-card,
-#host-load-card {
-  border-color: rgba(56, 189, 248, 0.2) !important;
+/* ---------- accent colors per card ---------- */
+
+#server-health-card { border-color: rgba(56, 189, 248, 0.24) !important; }
+#server-health-card::before { background: linear-gradient(90deg, transparent, #38bdf8, transparent); }
+
+#network-card { border-color: rgba(34, 211, 238, 0.2) !important; }
+#network-card::before { background: linear-gradient(90deg, transparent, #22d3ee, transparent); }
+
+#host-load-card { border-color: rgba(45, 212, 191, 0.2) !important; }
+#host-load-card::before { background: linear-gradient(90deg, transparent, #2dd4bf, transparent); }
+
+#macmini-card { border-color: rgba(96, 165, 250, 0.22) !important; }
+#macmini-card::before { background: linear-gradient(90deg, transparent, #60a5fa, transparent); }
+
+#host-status-card { border-color: rgba(59, 130, 246, 0.2) !important; }
+#host-status-card::before { background: linear-gradient(90deg, transparent, #3b82f6, transparent); }
+
+#pelican-card { border-color: rgba(139, 92, 246, 0.2) !important; }
+#pelican-card::before { background: linear-gradient(90deg, transparent, #8b5cf6, transparent); }
+
+#arcane-card { border-color: rgba(168, 85, 247, 0.2) !important; }
+#arcane-card::before { background: linear-gradient(90deg, transparent, #a855f7, transparent); }
+
+#grafana-card { border-color: rgba(249, 115, 22, 0.2) !important; }
+#grafana-card::before { background: linear-gradient(90deg, transparent, #f97316, transparent); }
+
+#prometheus-card { border-color: rgba(239, 68, 68, 0.18) !important; }
+#prometheus-card::before { background: linear-gradient(90deg, transparent, #ef4444, transparent); }
+
+#cadvisor-card::before,
+#nodeexporter-card::before,
+#homepage-card::before { background: linear-gradient(90deg, transparent, #64748b, transparent); }
+
+/* ---------- hierarchy: status cards emphasized ---------- */
+
+#server-health-card .stats .value,
+#network-card .stats .value,
+#host-load-card .stats .value {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
 }
 
-#server-health-card::before,
-#network-card::before,
-#host-load-card::before {
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-}
-
-#macmini-card,
-#host-status-card {
-  border-color: rgba(45, 212, 191, 0.18) !important;
-}
-
-#macmini-card::before,
-#host-status-card::before {
-  background: linear-gradient(90deg, transparent, var(--teal), transparent);
-}
-
-#pelican-card {
-  border-color: rgba(139, 92, 246, 0.18) !important;
-}
-
-#pelican-card::before {
-  background: linear-gradient(90deg, transparent, var(--violet), transparent);
-}
-
-#arcane-card {
-  border-color: rgba(168, 85, 247, 0.2) !important;
-}
-
-#arcane-card::before {
-  background: linear-gradient(90deg, transparent, #a855f7, transparent);
-}
-
-#grafana-card {
-  border-color: rgba(249, 115, 22, 0.2) !important;
-}
-
-#grafana-card::before {
-  background: linear-gradient(90deg, transparent, var(--amber), transparent);
-}
-
-#prometheus-card {
-  border-color: rgba(96, 165, 250, 0.2) !important;
-}
-
-#prometheus-card::before {
-  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-}
-
-#cadvisor-card {
-  border-color: rgba(34, 197, 94, 0.18) !important;
-}
-
-#cadvisor-card::before {
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
-}
-
-#nodeexporter-card {
-  border-color: rgba(96, 165, 250, 0.2) !important;
-}
-
-#nodeexporter-card::before {
-  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-}
-
+/* monitoring row visually lighter */
+#cadvisor-card,
+#nodeexporter-card,
 #homepage-card {
-  border-color: rgba(59, 130, 246, 0.18) !important;
+  opacity: 0.9;
 }
 
-#homepage-card::before {
-  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+#cadvisor-card:hover,
+#nodeexporter-card:hover,
+#homepage-card:hover {
+  opacity: 1;
 }
+
+/* ---------- minecraft hero ---------- */
 
 #minecraft-card {
-  min-height: 148px !important;
-  border-color: rgba(74, 222, 128, 0.22) !important;
+  min-height: 140px !important;
+  border-color: rgba(74, 222, 128, 0.24) !important;
   background:
-    radial-gradient(circle at 12% 40%, rgba(34, 197, 94, 0.16), transparent 28%),
-    radial-gradient(circle at 90% 10%, rgba(74, 222, 128, 0.10), transparent 25%),
+    radial-gradient(circle at 12% 40%, rgba(34, 197, 94, 0.15), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(74, 222, 128, 0.09), transparent 25%),
     linear-gradient(145deg, rgba(9, 30, 23, 0.94), rgba(7, 15, 12, 0.96)) !important;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(134, 239, 172, 0.04) !important;
 }
 
 #minecraft-card::before {
@@ -225,94 +164,48 @@ body {
 
 #minecraft-card:hover {
   border-color: rgba(74, 222, 128, 0.48) !important;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.4), 0 0 35px rgba(34, 197, 94, 0.06) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(34, 197, 94, 0.06) !important;
 }
 
-.bg-green-500,
-.bg-emerald-500 {
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
-}
-
-.info-block {
-  background: rgba(15, 23, 42, 0.8) !important;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-0);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.38);
-  border-radius: 999px;
-  border: 3px solid var(--bg-0);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.56);
-}
-
-footer {
-  opacity: 0.35 !important;
-}
+/* ---------- status bar (filled by custom.js) ---------- */
 
 #homelab-status-bar {
-  position: sticky;
-  top: 0;
-  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  width: min(1400px, calc(100% - 2rem));
-  margin: 0.8rem auto 0;
-  padding: 0.8rem 1rem;
-  border-radius: 14px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  background: rgba(8, 14, 20, 0.72);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0.4rem 0 0.2rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(10, 16, 24, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 #homelab-status-bar .status-group {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
 #homelab-status-bar .status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.34rem 0.72rem;
+  gap: 0.45rem;
+  padding: 0.28rem 0.65rem;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.82);
   border: 1px solid rgba(148, 163, 184, 0.12);
   color: rgba(226, 232, 240, 0.92);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-}
-
-#homelab-status-bar .status-pill.primary {
-  border-color: rgba(34, 197, 94, 0.3);
-  background: rgba(16, 185, 129, 0.08);
-}
-
-#homelab-status-bar .status-pill.warn {
-  border-color: rgba(245, 158, 11, 0.28);
-  background: rgba(245, 158, 11, 0.08);
-}
-
-#homelab-status-bar .status-pill.alert {
-  border-color: rgba(248, 113, 113, 0.28);
-  background: rgba(248, 113, 113, 0.07);
+  white-space: nowrap;
 }
 
 #homelab-status-bar .status-pill .dot {
@@ -320,57 +213,53 @@ footer {
   height: 7px;
   border-radius: 50%;
   background: #22c55e;
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.68);
+  box-shadow: 0 0 9px rgba(34, 197, 94, 0.65);
 }
 
-#homelab-status-bar .status-pill.warn .dot {
-  background: #f59e0b;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+#homelab-status-bar .status-pill.ok {
+  border-color: rgba(34, 197, 94, 0.28);
+  background: rgba(16, 185, 129, 0.07);
 }
 
-#homelab-status-bar .status-pill.alert .dot {
-  background: #f87171;
-  box-shadow: 0 0 10px rgba(248, 113, 113, 0.7);
+#homelab-status-bar .status-pill.warn { border-color: rgba(245, 158, 11, 0.28); background: rgba(245, 158, 11, 0.07); }
+#homelab-status-bar .status-pill.warn .dot { background: #f59e0b; box-shadow: 0 0 9px rgba(245, 158, 11, 0.65); }
+
+#homelab-status-bar .status-pill.alert { border-color: rgba(248, 113, 113, 0.3); background: rgba(248, 113, 113, 0.07); }
+#homelab-status-bar .status-pill.alert .dot { background: #f87171; box-shadow: 0 0 9px rgba(248, 113, 113, 0.7); }
+
+/* ---------- status dots ---------- */
+
+.bg-green-500,
+.bg-emerald-500 {
+  box-shadow: 0 0 9px rgba(16, 185, 129, 0.65);
 }
 
-#page_container .services-group {
-  position: relative;
-}
+/* ---------- scrollbar / footer ---------- */
 
-#page_container .services-group h2 {
-  padding-left: 0.2rem;
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.38);
+  border-radius: 999px;
+  border: 3px solid var(--bg-0);
 }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.56); }
 
-#page_container .services-group .service:nth-child(1) {
-  border-color: rgba(56, 189, 248, 0.26) !important;
-}
+footer { opacity: 0.3 !important; }
 
-#page_container .services-group .service:nth-child(2) {
-  border-color: rgba(45, 212, 191, 0.22) !important;
-}
-
-#page_container .services-group .service:nth-child(3) {
-  border-color: rgba(168, 85, 247, 0.22) !important;
-}
+/* ---------- mobile ---------- */
 
 @media (max-width: 768px) {
   #page_container {
     background-size: auto, auto, auto, 24px 24px, 24px 24px !important;
   }
 
-  .service {
-    border-radius: 14px !important;
-  }
+  .service { border-radius: 13px !important; }
 
-  #minecraft-card {
-    min-height: 130px !important;
-  }
+  #minecraft-card { min-height: 120px !important; }
 
   #homelab-status-bar {
-    width: calc(100% - 1rem);
-    padding: 0.7rem 0.8rem;
-    overflow-x: auto;
     justify-content: flex-start;
+    overflow-x: auto;
   }
 }
-
